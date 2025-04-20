@@ -1,16 +1,16 @@
-name: Auto deploy
+name: Deploy to cPanel
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Auto deploy via SSH
+      - name: Connect to Server via SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: capteknik.my.id
@@ -18,5 +18,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd public_html/portfolio
+            cd ~/public_html/portfolio
             git pull origin main
