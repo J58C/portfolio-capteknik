@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           dark:bg-darkTheme dark:text-white`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
