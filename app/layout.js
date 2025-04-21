@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       >
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
